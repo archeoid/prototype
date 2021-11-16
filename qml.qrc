@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/move.svg</file>
+        <file>images/scale.svg</file>
+        <file>images/rotate.svg</file>
+    </qresource>
+</RCC>
