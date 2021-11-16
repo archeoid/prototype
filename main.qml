@@ -17,24 +17,17 @@ Window {
         guiModel: GUI
     }
 
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        onPositionChanged: { GUI.mousePos = Qt.point(mouse.x, mouse.y); }
-
-            Text {
-                id: fps
-                x: 592
-                y: 8
-                color: "#ffffff"
-                text: qsTr(glrenderer.fps.toString())
-                anchors.right: parent.right
-                font.pixelSize: 12
-                horizontalAlignment: Text.AlignLeft
-                font.bold: true
-                anchors.rightMargin: 8
-            }
+    Text {
+        id: fps
+        x: 592
+        y: 8
+        color: "#ffffff"
+        text: qsTr(glrenderer.fps.toString())
+        anchors.right: parent.right
+        font.pixelSize: 12
+        horizontalAlignment: Text.AlignLeft
+        font.bold: true
+        anchors.rightMargin: 8
     }
 
     RoundButton {
@@ -71,5 +64,20 @@ Window {
         icon.source: "images/scale.svg"
         checked: GUI.activeAction == 3
         onPressed: GUI.activeAction = 3
+    }
+
+    MouseArea {
+        id: mouseArea
+        anchors.fill: parent
+        hoverEnabled: true
+        onPositionChanged: { GUI.mousePos = Qt.point(mouse.x, mouse.y); mouse.accepted = false; }
+        propagateComposedEvents: true
+
+        //dont eat the events!
+        onClicked: mouse.accepted = false;
+        onPressed: mouse.accepted = false;
+        onReleased: mouse.accepted = false;
+        onDoubleClicked: mouse.accepted = false;
+        onPressAndHold: mouse.accepted = false;
     }
 }
