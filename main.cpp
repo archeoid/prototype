@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     QScopedPointer<GUIModel> guiPointer(new GUIModel);
-    QScopedPointer<GLRenderer> glPointer(new GLRenderer);
     qmlRegisterSingletonInstance("prototype.gui", 1, 0, "GUI", guiPointer.get());
+    qmlRegisterSingletonType( QUrl("qrc:/Constants.qml"), "prototype.constants", 1, 0, "Constants");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

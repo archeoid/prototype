@@ -76,31 +76,32 @@ void GLRenderer::paint()
     float y = -(2*GUI()->mousePos().y()/(float)viewportSize.height() - 1);
     float d = 0.1;
 
-    auto i = (GUI()->mousePos().x() / (viewportSize.width()/4));
-    if(i >= 1)
-        GUI()->changeAction(i);
-
-
     float values[] = {
         x-d, y-d*r,
         x+d, y-d*r,
         x-d, y+d*r,
         x+d, y+d*r
     };
+
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     program->setAttributeArray(0, GL_FLOAT, values, 2);
 
     glClearColor(0,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glViewport(0, 0, viewportSize.width(), viewportSize.height());
+
     glDisable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
+    glEnable(GL_DEPTH_TEST);
+    glDisable(GL_BLEND);
+
+
     program->disableAttributeArray(0);
     program->release();
-    window()->resetOpenGLState();
+    //window()->resetOpenGLState();
     window()->endExternalCommands();
 }
