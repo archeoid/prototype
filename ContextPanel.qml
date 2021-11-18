@@ -2,6 +2,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.1
 
 Item {
     id: contextArea
@@ -48,8 +49,10 @@ Item {
 
             Text {
                 id: propertiesTitle
-                color: "#ffffff"
+                color: Constants.textColor
                 text:  qsTr("Properties")
+                elide: Text.ElideRight
+                width: parent.parent.width-15
                 anchors.left: parent.left
                 anchors.top: parent.top
                 font.pixelSize: 16
@@ -102,8 +105,10 @@ Item {
 
             Text {
                 id: sceneText
-                color: "#ffffff"
+                color: Constants.textColor
                 text:  qsTr("Scene")
+                elide: Text.ElideRight
+                width: parent.parent.width-15
                 anchors.left: parent.left
                 anchors.top: parent.top
                 font.pixelSize: 16

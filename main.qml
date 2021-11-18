@@ -4,7 +4,7 @@ import QtQuick.Controls 2.12
 import prototype 1.0
 import prototype.gui 1.0
 
-Window {
+ApplicationWindow {
     id: window
     width: 1280
     height: 720
@@ -36,6 +36,11 @@ Window {
     ArrangeScreen {
         anchors.fill: parent
     }
+
+    menuBar: SettingsBar {
+
+    }
+
 }
 
 /*##^##

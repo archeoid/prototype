@@ -9,5 +9,9 @@
         <file>CameraControls.qml</file>
         <file>ArrangeScreen.qml</file>
         <file>ActionBar.qml</file>
+        <file>SettingsBar.qml</file>
+        <file>style/SMenuBar.qml</file>
+        <file>style/SMenu.qml</file>
+        <file>style/SMenuSeperator.qml</file>
     </qresource>
 </RCC>

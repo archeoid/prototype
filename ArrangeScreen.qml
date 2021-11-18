@@ -21,7 +21,7 @@ Item {
     Rectangle {
         id: seperatorH
         width: 10
-        color: "#00000000"
+        color: "transparent"
         anchors.right: parent.right
         anchors.top: contextPanel.top
         anchors.bottom: contextPanel.bottom
@@ -35,7 +35,7 @@ Item {
             drag.target: parent
 
             drag.minimumX: window.width / 2
-            drag.maximumX: window.width - 150
+            drag.maximumX: window.width - 50
 
             //break right anchor
             onPressed: {
@@ -48,7 +48,6 @@ Item {
             }
         }
     }
-
 
     CameraControls {
         id: cameraControls
@@ -63,12 +62,9 @@ Item {
         anchors.leftMargin: 10
     }
 
-
-
     Text {
         id: fps
-        x: 845
-        color: "#ffffff"
+        color: Constants.textColor
         text: qsTr(glrenderer.fps.toString())
         anchors.top: cameraControls.bottom
         anchors.right: contextPanel.left
