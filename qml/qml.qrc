@@ -1,17 +1,19 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>Main.qml</file>
         <file>Constants.qml</file>
         <file>images/move.svg</file>
         <file>images/scale.svg</file>
         <file>images/rotate.svg</file>
         <file>components/ContextPanel.qml</file>
         <file>components/CameraControls.qml</file>
-        <file>components/ArrangeScreen.qml</file>
+        <file>components/SceneEditScreen.qml</file>
         <file>components/ActionBar.qml</file>
         <file>components/SettingsBar.qml</file>
         <file>style/SMenuBar.qml</file>
         <file>style/SMenu.qml</file>
         <file>style/SMenuSeperator.qml</file>
+        <file>components/ContextDrag.qml</file>
+        <file>components/MouseCapture.qml</file>
     </qresource>
 </RCC>

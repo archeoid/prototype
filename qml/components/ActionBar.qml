@@ -7,63 +7,63 @@ import "../"
 
 Column {
     id: actionColumn
-    property real _size: 50
-    width: _size
+    property real buttonSize: 50
+    width: buttonSize
     height: 400
 
-    property real space: {(actionColumn.height-(_size*6))/7}
+    property real space: {(actionColumn.height-(buttonSize*6))/7}
     spacing: space
     topPadding: space
     bottomPadding: space
 
     RoundButton {
-        width: _size
-        height: _size
+        width: buttonSize
+        height: buttonSize
         id: moveButton
         checkable: true
         autoExclusive: true
         display: AbstractButton.IconOnly
-        icon.source: "../images/move.svg"
+        icon.source: "qrc:/images/move.svg"
         checked: GUI.activeAction === 1
         onPressed: GUI.activeAction = 1
     }
 
     RoundButton {
-        width: _size
-        height: _size
+        width: buttonSize
+        height: buttonSize
         id: rotateButton
         checkable: true
         autoExclusive: true
         display: AbstractButton.IconOnly
-        icon.source: "../images/rotate.svg"
+        icon.source: "qrc:/images/rotate.svg"
         checked: GUI.activeAction === 2
         onPressed: GUI.activeAction = 2
     }
 
     RoundButton {
-        width: _size
-        height: _size
+        width: buttonSize
+        height: buttonSize
         id: scaleButton
         checkable: true
         autoExclusive: true
         display: AbstractButton.IconOnly
-        icon.source: "../images/scale.svg"
+        icon.source: "qrc:/images/scale.svg"
         checked: GUI.activeAction === 3
         onPressed: GUI.activeAction = 3
     }
 
     RoundButton {
-        width: _size
-        height: _size
+        width: buttonSize
+        height: buttonSize
         checkable: true
         autoExclusive: true
         display: AbstractButton.IconOnly
-        icon.source: "../images/move.svg"
+        icon.source: "qrc:/images/move.svg"
     }
 
     RoundButton {
-        width: _size
-        height: _size
+        width: buttonSize
+        height: buttonSize
         checkable: true
         autoExclusive: true
         display: AbstractButton.IconOnly
@@ -71,12 +71,12 @@ Column {
     }
 
     RoundButton {
-        width: _size
-        height: _size
+        width: buttonSize
+        height: buttonSize
         checkable: true
         autoExclusive: true
         display: AbstractButton.IconOnly
-        icon.source: "../images/scale.svg"
+        icon.source: "qrc:/images/scale.svg"
     }
 
 }

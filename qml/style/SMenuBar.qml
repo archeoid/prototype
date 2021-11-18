@@ -2,13 +2,13 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import "../"
 MenuBar {
-    property real _size: Constants.menuBarSize
-    height: _size
-    contentHeight: _size
+    readonly property real menuBarSize: 30
+    height: menuBarSize
+    contentHeight: menuBarSize
 
     delegate: MenuBarItem {
             id: menuBarItem
-            implicitHeight: _size
+            implicitHeight: menuBarSize
             hoverEnabled: true
             contentItem: Text {
                 text: menuBarItem.text
@@ -21,16 +21,16 @@ MenuBar {
             }
 
             background: Rectangle {
-                implicitWidth: _size
-                implicitHeight: _size
+                implicitWidth: menuBarSize
+                implicitHeight: menuBarSize
                 opacity: enabled ? 1 : 0.3
                 color: menuBarItem.hovered || menuBarItem.highlighted ?  Constants.accentColor : "transparent"
             }
     }
 
     background: Rectangle {
-        implicitWidth: _size
-        implicitHeight: _size
+        implicitWidth: menuBarSize
+        implicitHeight: menuBarSize
         color: Constants.highlightColor
     }
 }

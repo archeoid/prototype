@@ -8,6 +8,4 @@ QtObject {
     readonly property color accentColor: "#ff5e00"
     readonly property color textColor: "#c2c2c2"
     readonly property color darkTextColor: "#252525"
-
-    readonly property real menuBarSize: 30
 }

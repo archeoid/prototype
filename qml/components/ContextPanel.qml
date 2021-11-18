@@ -8,6 +8,8 @@ import "../"
 
 Item {
     id: contextArea
+    readonly property int upperMin: 200
+    readonly property int lowerMin: 200
 
     Rectangle {
         id: contextBg
@@ -40,7 +42,7 @@ Item {
             anchors.leftMargin: 0
             anchors.rightMargin: 0
 
-            Rectangle {
+            Rectangle { //square off lower right corner
                 color: Constants.highlightColor
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
@@ -122,8 +124,8 @@ Item {
                 id: dragAreaV
                 anchors.fill: parent
                 drag.target: parent
-                drag.minimumY: 100
-                drag.maximumY: contextArea.height - 100
+                drag.minimumY: upperMin
+                drag.maximumY: contextArea.height - lowerMin
             }
         }
     }
