@@ -1,7 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.12
 
+import prototype 1.0
+import prototype.gui 1.0
+
 import "../"
+import "../style"
 
 Rectangle {
     readonly property real buttonSize: 40
@@ -13,19 +17,48 @@ Rectangle {
     color: Constants.structureColor
 
     Row {
+        id: controlsRow
         property real space: {(parent.width-(buttonSize*3)-gizmoSize)/5}
         spacing: space
         leftPadding: space
         rightPadding: space
 
-        Repeater {
-            model: 3
-            RoundButton {
+        SButton {
+            icon.source: "qrc:/images/reset_camera_icon.svg"
+            display: AbstractButton.IconOnly
+            radius: 5
+            width: buttonSize
+            height: buttonSize
+            //onPressed: doSomething(checked)
+        }
+
+        Row {
+            id: exclusiveButtons
+            spacing: controlsRow.space
+            SButton {
+                icon.source: "qrc:/images/ortho_icon.svg"
+                display: AbstractButton.IconOnly
                 checkable: true
                 radius: 5
                 width: buttonSize
                 height: buttonSize
+                checked: GUI.activeProjection === GUI.PROJECTION_ORTHO
+                onPressed: GUI.activeProjection = GUI.PROJECTION_ORTHO
             }
+            SButton {
+                icon.source: "qrc:/images/perspective_icon.svg"
+                display: AbstractButton.IconOnly
+                checkable: true
+                radius: 5
+                width: buttonSize
+                height: buttonSize
+                checked: GUI.activeProjection === GUI.PROJECTION_PERSPECTIVE
+                onPressed: GUI.activeProjection = GUI.PROJECTION_PERSPECTIVE
+            }
+        }
+
+        ButtonGroup {
+            buttons: exclusiveButtons.children
         }
 
         Rectangle {
@@ -33,7 +66,7 @@ Rectangle {
             y: {-(gizmoSize-buttonSize)/2}
             width: gizmoSize
             height: gizmoSize
-            color: "#ffffff"
+            color: Constants.structureColor
         }
     }
 }

@@ -2,9 +2,6 @@
     <qresource prefix="/">
         <file>Main.qml</file>
         <file>Constants.qml</file>
-        <file>images/move.svg</file>
-        <file>images/scale.svg</file>
-        <file>images/rotate.svg</file>
         <file>components/ContextPanel.qml</file>
         <file>components/CameraControls.qml</file>
         <file>components/SceneEditScreen.qml</file>
@@ -15,5 +12,17 @@
         <file>style/SMenuSeperator.qml</file>
         <file>components/ContextDrag.qml</file>
         <file>components/MouseCapture.qml</file>
+        <file>images/model_icon.svg</file>
+        <file>images/ortho_icon.svg</file>
+        <file>images/perspective_icon.svg</file>
+        <file>images/reset_camera_icon.svg</file>
+        <file>images/scale_icon.svg</file>
+        <file>images/rotate_icon.svg</file>
+        <file>images/move_icon.svg</file>
+        <file>images/mirror_icon.svg</file>
+        <file>images/ground_icon.svg</file>
+        <file>images/grid_support_icon.svg</file>
+        <file>components/ActionButton.qml</file>
+        <file>style/SButton.qml</file>
     </qresource>
 </RCC>

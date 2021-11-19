@@ -10,9 +10,15 @@ void GUIModel::moveMouse(QPoint pos) {
     _mousePos = pos;
     emit mouseMoved();
 }
-void GUIModel::changeAction(int action) {
+void GUIModel::changeAction(Action action) {
     if(action == _activeAction)
         return;
     _activeAction = action;
     emit actionChanged();
+}
+void GUIModel::changeProjection(Projection proj) {
+    if(proj == _activeProjection)
+        return;
+    _activeProjection = proj;
+    emit projectionChanged();
 }

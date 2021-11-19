@@ -6,8 +6,8 @@ import prototype.gui 1.0
 import "../"
 
 Column {
+    readonly property real buttonSize: 50
     id: actionColumn
-    property real buttonSize: 50
     width: buttonSize
     height: 400
 
@@ -16,67 +16,32 @@ Column {
     topPadding: space
     bottomPadding: space
 
-    RoundButton {
-        width: buttonSize
-        height: buttonSize
-        id: moveButton
-        checkable: true
-        autoExclusive: true
-        display: AbstractButton.IconOnly
-        icon.source: "qrc:/images/move.svg"
-        checked: GUI.activeAction === 1
-        onPressed: GUI.activeAction = 1
+    ActionButton {
+        guiAction: GUI.ACTION_MOVE
+        icon.source: "qrc:/images/move_icon.svg"
+    }
+    ActionButton {
+        guiAction: GUI.ACTION_ROTATE
+        icon.source: "qrc:/images/rotate_icon.svg"
+    }
+    ActionButton {
+        guiAction: GUI.ACTION_SCALE
+        icon.source: "qrc:/images/scale_icon.svg"
+    }
+    ActionButton {
+        guiAction: GUI.ACTION_MIRROR
+        icon.source: "qrc:/images/mirror_icon.svg"
+    }
+    ActionButton {
+        guiAction: GUI.ACTION_GROUND
+        icon.source: "qrc:/images/ground_icon.svg"
+    }
+    ActionButton {
+        guiAction: GUI.ACTION_GRID_SUPPORT
+        icon.source: "qrc:/images/grid_support_icon.svg"
     }
 
-    RoundButton {
-        width: buttonSize
-        height: buttonSize
-        id: rotateButton
-        checkable: true
-        autoExclusive: true
-        display: AbstractButton.IconOnly
-        icon.source: "qrc:/images/rotate.svg"
-        checked: GUI.activeAction === 2
-        onPressed: GUI.activeAction = 2
+    ButtonGroup {
+        buttons: actionColumn.children
     }
-
-    RoundButton {
-        width: buttonSize
-        height: buttonSize
-        id: scaleButton
-        checkable: true
-        autoExclusive: true
-        display: AbstractButton.IconOnly
-        icon.source: "qrc:/images/scale.svg"
-        checked: GUI.activeAction === 3
-        onPressed: GUI.activeAction = 3
-    }
-
-    RoundButton {
-        width: buttonSize
-        height: buttonSize
-        checkable: true
-        autoExclusive: true
-        display: AbstractButton.IconOnly
-        icon.source: "qrc:/images/move.svg"
-    }
-
-    RoundButton {
-        width: buttonSize
-        height: buttonSize
-        checkable: true
-        autoExclusive: true
-        display: AbstractButton.IconOnly
-        icon.source: "../images/rotate.svg"
-    }
-
-    RoundButton {
-        width: buttonSize
-        height: buttonSize
-        checkable: true
-        autoExclusive: true
-        display: AbstractButton.IconOnly
-        icon.source: "qrc:/images/scale.svg"
-    }
-
 }
